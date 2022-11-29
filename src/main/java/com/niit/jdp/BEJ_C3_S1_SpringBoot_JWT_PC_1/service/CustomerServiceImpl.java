@@ -7,5 +7,29 @@
 
 package com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.service;
 
-public class CustomerServiceImpl {
+
+import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.domain.Customer;
+
+import java.util.List;
+
+public class CustomerServiceImpl implements ICustomerService {
+    @Override
+    public Customer saveCustomer(Customer customer) {
+        return null;
+    }
+
+    @Override
+    public List<Customer> getAllCustomers() {
+        return null;
+    }
+
+    @Override
+    public Customer validateLogin(String customerName, String customerPassword) {
+        return null;
+    }
+
+    @Override
+    public boolean deleteCustomer(int CustomerId) {
+        return false;
+    }
 }
