@@ -9,12 +9,18 @@ package com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.service;
 
 
 import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.domain.Customer;
+import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class CustomerServiceImpl implements ICustomerService {
+    private CustomerRepository customerRepository;
+
+    public CustomerServiceImpl(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
 
     @Override
     public Customer saveCustomer(Customer customer) {
