@@ -50,5 +50,13 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public boolean deleteCustomer(int CustomerId) throws CustomerNotFoundException {
-
+        boolean flag = false;
+        if (customerRepository.findById(CustomerId).isEmpty()) {
+            throw new CustomerNotFoundException();
+        } else {
+            customerRepository.deleteById(CustomerId);
+            flag = true;
+        }
+        return flag;
     }
+}
