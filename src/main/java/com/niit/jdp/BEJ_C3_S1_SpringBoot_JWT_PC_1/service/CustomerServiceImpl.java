@@ -10,6 +10,7 @@ package com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.service;
 
 import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.domain.Customer;
 import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.repository.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.List;
 public class CustomerServiceImpl implements ICustomerService {
     private CustomerRepository customerRepository;
 
+    @Autowired
     public CustomerServiceImpl(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
