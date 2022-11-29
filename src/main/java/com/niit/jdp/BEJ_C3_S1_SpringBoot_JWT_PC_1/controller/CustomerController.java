@@ -7,5 +7,9 @@
 
 package com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.controller;
 
+import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.service.ICustomerService;
+
 public class CustomerController {
+    private ICustomerService iCustomerService;
+
 }
