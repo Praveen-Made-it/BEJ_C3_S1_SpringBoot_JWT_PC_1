@@ -64,4 +64,14 @@ public class Customer {
     public void setCustomerPhoneNumber(long customerPhoneNumber) {
         this.customerPhoneNumber = customerPhoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "customerId=" + customerId +
+                ", customerName='" + customerName + '\'' +
+                ", customerPassword='" + customerPassword + '\'' +
+                ", customerPhoneNumber=" + customerPhoneNumber +
+                '}';
+    }
 }
