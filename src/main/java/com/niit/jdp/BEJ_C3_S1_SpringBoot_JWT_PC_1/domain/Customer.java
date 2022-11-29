@@ -8,10 +8,13 @@
 package com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Customer {
-
+    @Id
+    @GeneratedValue
     private int customerId;
 
     private String customerName;
