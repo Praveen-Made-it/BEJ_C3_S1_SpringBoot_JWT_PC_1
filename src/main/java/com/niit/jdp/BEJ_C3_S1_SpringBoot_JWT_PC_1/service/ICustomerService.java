@@ -10,5 +10,7 @@ public interface ICustomerService {
 
     public List<Customer> getAllCustomers();
 
+    public Customer validateLogin(String customerName, String customerPassword);
+
 
 }
