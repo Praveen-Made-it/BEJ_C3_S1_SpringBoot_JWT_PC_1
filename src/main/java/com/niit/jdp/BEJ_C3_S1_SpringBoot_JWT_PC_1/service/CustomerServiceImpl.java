@@ -9,6 +9,7 @@ package com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.service;
 
 
 import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.domain.Customer;
+import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.exception.CustomerAlreadyExistsException;
 import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +26,11 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
-    public Customer saveCustomer(Customer customer) {
-        return null;
+    public Customer saveCustomer(Customer customer) throws CustomerAlreadyExistsException {
+        if (customerRepository.findById(customer.getCustomerId()).isPresent()) {
+            throw new CustomerAlreadyExistsException();
+        }
+        return customerRepository.save(customer);
     }
 
     @Override
