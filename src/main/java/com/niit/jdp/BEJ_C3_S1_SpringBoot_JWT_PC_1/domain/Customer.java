@@ -23,5 +23,13 @@ public class Customer {
 
     private long customerPhoneNumber;
 
+    public Customer() {
+    }
 
+    public Customer(int customerId, String customerName, String customerPassword, long customerPhoneNumber) {
+        this.customerId = customerId;
+        this.customerName = customerName;
+        this.customerPassword = customerPassword;
+        this.customerPhoneNumber = customerPhoneNumber;
+    }
 }
