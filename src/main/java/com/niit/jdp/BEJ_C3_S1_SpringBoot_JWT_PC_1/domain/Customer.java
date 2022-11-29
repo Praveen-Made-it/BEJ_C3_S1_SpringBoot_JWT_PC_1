@@ -12,4 +12,13 @@ import javax.persistence.Entity;
 @Entity
 public class Customer {
 
+    private int customerId;
+
+    private String customerName;
+
+    private String customerPassword;
+
+    private long customerPhoneNumber;
+
+
 }
