@@ -26,7 +26,7 @@ public class JwtSecurityTokenGenerator implements SecurityTokenGenerator {
 
         Map<String, String> map = new HashMap<>();
         map.put("token", jwtToken);
-        map.put("message", "User Successfully logged in");
+        map.put("message", "Customer Successfully logged in");
         return map;
     }
 }
