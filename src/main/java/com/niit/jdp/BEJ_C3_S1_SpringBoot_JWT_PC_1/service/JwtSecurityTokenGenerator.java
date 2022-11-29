@@ -10,11 +10,13 @@ package com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.service;
 import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.domain.Customer;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+@Service
 public class JwtSecurityTokenGenerator implements SecurityTokenGenerator {
     @Override
     public Map<String, String> generateToken(Customer customer) {
