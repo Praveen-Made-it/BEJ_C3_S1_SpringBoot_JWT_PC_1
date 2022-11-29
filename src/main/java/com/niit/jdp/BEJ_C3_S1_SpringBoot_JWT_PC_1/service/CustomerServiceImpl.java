@@ -10,6 +10,7 @@ package com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.service;
 
 import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.domain.Customer;
 import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.exception.CustomerAlreadyExistsException;
+import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.exception.CustomerNotFoundException;
 import com.niit.jdp.BEJ_C3_S1_SpringBoot_JWT_PC_1.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,12 +40,15 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
-    public Customer validateLogin(String customerName, String customerPassword) {
-        return null;
+    public Customer validateLogin(String customerName, String customerPassword) throws CustomerNotFoundException {
+        Customer customerObj = customerRepository.findByUsernameAndPassword(customerName, customerPassword);
+        if (customerObj == null) {
+            throw new CustomerNotFoundException();
+        }
+        return customerObj;
     }
 
     @Override
-    public boolean deleteCustomer(int CustomerId) {
-        return false;
+    public boolean deleteCustomer(int CustomerId) throws CustomerNotFoundException {
+
     }
-}
