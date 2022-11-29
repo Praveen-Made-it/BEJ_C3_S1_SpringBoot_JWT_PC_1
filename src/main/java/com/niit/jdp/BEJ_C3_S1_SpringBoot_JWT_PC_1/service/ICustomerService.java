@@ -12,5 +12,5 @@ public interface ICustomerService {
 
     public Customer validateLogin(String customerName, String customerPassword);
 
-
+    boolean deleteCustomer(int CustomerId);
 }
