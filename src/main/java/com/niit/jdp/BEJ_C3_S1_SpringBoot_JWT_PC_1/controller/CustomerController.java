@@ -55,5 +55,10 @@ public class CustomerController {
         }
     }
 
+    @GetMapping("/api/v1/fetchall")
+    public ResponseEntity<?> fetchFunction1() {
+        return new ResponseEntity<>(customerService.getAllCustomers(), HttpStatus.OK);
+    }
+
 }
 
